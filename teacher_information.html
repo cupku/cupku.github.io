@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href='http://mmwebfonts.comquas.com/fonts/?font=myanmar3' />
+<style>
+@font-face
+{
+    font-family: 'Myanmar3';
+    font-weight: normal;
+    font-style: normal;
+    src: url('font/mm3.ttf');
+}
+
+.tblTeacherInfo {
+    border:1px solid lightblue;
+    width:80%;
+    border-collapse: collapse;
+}
+
+.firstrow th{
+    padding:7px;
+    border:1px solid lightblue;
+    border-top:5px solid #22A7F0 !important;
+}
+
+.tblTeacherInfo td{
+    border:1px solid lightblue;
+    padding:7px;
+}
+
+.header {
+	height:45px;
+	line-height:25px;
+	border:1px solid #22A7F0;
+	color:darkblue;
+	background:#22A7F0;
+	font-family:Georgia, serif;
+    font-size: 25px; 
+}
+
+.tblTeacherInfo td:nth-child(1){
+    width:10%
+    text-align:center;
+}
+
+.tblTeacherInfo td:nth-child(2){
+	width:120px;
+    text-align:right;
+    font-family:Myanmar3; 
+    font-size: 20px;
+}
+
+.tblTeacherInfo td:nth-child(3){
+	width:15%;
+	min-width:150px;
+    text-align:left;
+    font-family:Myanmar3; 
+    font-size: 20px;
+}
+
+.tblTeacherInfo td:nth-child(4){
+    width:20%;
+    text-align:center;
+}
+
+.tblTeacherInfo td:nth-child(5){
+	min-width:30%;
+    text-align:center;
+    font-family:Myanmar3; 
+    font-size: 16px;
+}
+
+.lastrow th{
+    padding:7px;
+    border-bottom:5px solid #22A7F0 !important;
+}
+
+.even {
+	background-color:#EEFFFF;
+}
+
+/* Menu */
+.menulist {
+	margin-left:10%;
+	width:80%;
+	margin-bottom:10px;
+}
+
+li span{
+	    display: block;
+    color: white;
+    font-size:16px;
+    font-weight: 900;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+</style>
+<script>
+	
+	function sortFunction(a, b) {
+    	if (a['name'] === b['name']) {
+        	return 0;
+    	}
+    	else {
+        	return (a['name'] < b['name']) ? -1 : 1;
+    	}
+	}
+
+
+    function funcOnLoad() {
+         var arrData=[];
+    
+arrData[0] = { title:'ဒေါ်', name:'တင်မျိုးလတ်', phnumber:'09 256036219, 02 75539', address: 'အိမ်နံပါတ် ၉၊ ၁၇ လမ်း၊ ၈၀ x ၈၁ ကြား၊ အောင်မြေသာဇံမြို့နယ်၊ မန္တလေး။' };
+arrData[1] = { title: 'ဒေါက်တာ ဒေါ်', name:'မိုးမမတင်', phnumber:'09 8503016, 043 23840' , address: 'mmmtin@gmail.com' };
+arrData[2] = { title:'ဒေါ်', name:'ယဉ်မင်းထွန်း', phnumber:'09 797592399' , address: '-' };
+arrData[3] = { title:'ဒေါက်တာ ဒေါ်', name:'သဲနုဖြူ ', phnumber:'09 2033014' , address: 'via viber' };
+arrData[4] = { title:'ဒေါ်', name:'စမ်းသီတာ', phnumber:'09 790459670, 09 420715976' , address: 'မန္တလေး ကွန်ပျူတာ တက္ကသိုလ်(ဒဟက်တော)' };
+arrData[5] = { title:'ဒေါ်', name:'ခိုင်ယဉ်မွန်', phnumber:'-' , address: '-' };
+arrData[6] = { title:'ဒေါ်', name:'ခင်မြတ်မြတ်မိုး', phnumber:'09 401616887' , address: 'H- 23( ရဲတိုက်တန်း) YOUTH ကွန်ပျုတာသင်တန်း လမ်း ၅သွယ်အနီး၊ ဆေးရုံလမ်း၊ တိုင်းဆက်သွယ်ရေးရုံးနှင့် မျက်စောင်းထိုး မကွေးမြို့။' };
+arrData[7] = { title:'ဒေါ်', name:'ထက်လှိုင်ငြိမ်း', phnumber:'-' , address: '-' };
+arrData[8] = { title:'ဒေါ်', name:'ရီရီမော်', phnumber:'-' , address: '-' };
+arrData[9] = { title:'ဒေါ်', name:'ကြည်ကြည်မြင့်', phnumber:'09 402602796, 09 794690515' , address: 'ကွန်ပျူတာ တက္ကသိုလ် (မိထ္တီလာ)' };
+arrData[10] = { title:'ဒေါ်', name:'ခိုင်ဇာထွန်း', phnumber:'-' , address: '-' };
+arrData[11] = { title:'ဒေါ်', name:'ဥမ္မာအောင်', phnumber:'09 43010558' , address: '-' };
+arrData[12] = { title:'ဒေါ်', name:'သင်းသင်းထွေး', phnumber:'09 5201356' , address: 'ကွန်ပျူတာ တက္ကသိုလ်၊ ပုသိမ်မြို့။' };
+arrData[13] = { title:'ဒေါ်', name:'သင်းသင်းဝင်း', phnumber:'09 401571998' , address: 'ကွန်ပျူတာ တက္ကသိုလ် (မိထ္တီလာ)' };
+arrData[14] = { title:'ဒေါ်', name:'ချမ်းမြေ့အေး', phnumber:'-' , address: '-' };
+arrData[15] = { title:'ဦး', name:'ဌေးလှိုင်', phnumber:'-' , address: '-' };
+arrData[16] = { title:'ဒေါ်', name:'နုဝေဝေမြင့်', phnumber:'09 401648108, 062 60382' , address: 'မေတ္တာမွန်အဆောင်မှာနေသော အိုရင်းရွာမှ ကျောင်းသူလူကြုံနှင့် ထည့်ပေးပါရန်..' };
+arrData[17] = { title:'ဒေါ်', name:'မေသင်းသင်းခိုင်', phnumber:'-' , address: '-' };
+arrData[18] = { title:'ဦး', name:'သိန်းသန်းသွင်', phnumber:'09 979066379, 09 91045689' , address: '-' };
+arrData[19] = { title:'ဒေါ်', name:'ဇင်မာရင်', phnumber:'09 33175489' , address: '-' };
+arrData[20] = { title:'ဒေါက်တာ ဒေါ်', name:'ရွှေစင်သိန်း', phnumber:'09 2300086' , address: '-' };
+arrData[21] = { title:'ဒေါက်တာ ဒေါ်', name:'ခင်စောမြင့်', phnumber:'09 254322832' , address: 'နည်းပညာတက္ကသိုလ် (မော်ဘီ) အင်ဂျင်နီယာသင်္ချာဌာန။' };
+arrData[22] = { title:'ဒေါ်', name:'အိကျော့ခိုင်', phnumber:'-' , address: '-' };
+arrData[23] = { title:'ဒေါက်တာ ဦး', name:'သင်းနိုင်', phnumber:'-' , address: '-' };
+arrData[24] = { title:'ဒေါက်တာ ဒေါ်', name:'စင်သီယာမြင့်', phnumber:'09 400467478' , address: '-' };
+arrData[25] = { title:'ဒေါ်', name:'ခင်သက်စုဝင်း', phnumber:'-' , address: '-' };
+arrData[26] = { title:'ဒေါ်', name:'လဲ့အိငြိမ်း', phnumber:'-' , address: '-' };
+arrData[27] = { title:'ဒေါက်တာ ဒေါ်', name:'သန္တာထွေး', phnumber:'09 2024243' , address: '-' };
+arrData[28] = { title:'ဦး', name:'သက်စိုးအေး', phnumber:'-' , address: '-' };
+arrData[29] = { title:'ဒေါက်တာ ဒေါ်', name:'တေးတေးရွှေ', phnumber:'-' , address: '-' };
+arrData[30] = { title:'ဒေါက်တာ ဒေါ်', name:'ဇင်မေအေး', phnumber:'09 425273243' , address: '-' };
+arrData[31] = { title:'ဒေါ်', name:'မေမျိုးဆွေ', phnumber:'09 794838411' , address: '-' };
+arrData[32] = { title:'ဒေါ်', name:'လင်းလင်းလက်', phnumber:'09 793334403' , address: '-' };
+arrData[33] = { title:'ဒေါ်', name:'အေးအေးနွယ်', phnumber:'09 2302332' , address: '-' };
+arrData[34] = { title:'ဒေါ်', name:'လေးလေး', phnumber:'09 401628468' , address: '-' };
+arrData[35] = { title:'ဒေါ်', name:'ကြည်မိုးခိုင်', phnumber:'-' , address: '-' };
+arrData[36] = { title:'ဒေါ်', name:'မြင့်မြင့်သန်း', phnumber:'09 794661968' , address: '-' };
+arrData[37] = { title:'ဒေါ်', name:'အိအိကျော်', phnumber:'09 43009633' , address: '-' };
+arrData[38] = { title:'ဒေါ်', name:'ဥမ္မာ', phnumber:'-' , address: '-' };
+arrData[39] = { title:'ဒေါက်တာ ဒေါ်', name:'ဆင့်ဆင့်အောင်', phnumber:'09 444012946, 09 786505012, 09 6502215' , address: 'မန္တလေး ကွန်ပျူတာ တက္ကသိုလ်(ဒဟက်တော)' };
+arrData[40] = { title:'ဒေါ်', name:'မိမိလှိုင်', phnumber:'09 794661969' , address: '-' };
+arrData[41] = { title:'ဒေါ်', name:'မော်မော်ဝင်း', phnumber:'09 797108768' , address: '-' };
+arrData[42] = { title:'ဒေါ်', name:'ဖြူဖြူသင်း', phnumber:'-' , address: '-' };
+arrData[43] = { title:'ဒေါက်တာ ဒေါ်', name:'စိုးမြတ်သူ', phnumber:'-' , address: '-' };
+arrData[44] = { title:'ဒေါ်', name:'မြမြဌေး', phnumber:'09 794240050' , address: '-' };
+arrData[45] = { title:'ဒေါ်', name:'ခင်သန္တာမြင့်', phnumber:'09 2210330' , address: '-' };
+arrData[46] = { title:'ဒေါ်', name:'မိုးသီတာနိုင်', phnumber:'-' , address: '-' };
+arrData[47] = { title:'ဒေါ်', name:'ရီမာမြင့်', phnumber:'09 400411112' , address: '-' };
+arrData[48] = { title:'ဒေါ်', name:'စိုးစိုးသက်', phnumber:'09 259068734' , address: '-' };
+arrData[49] = { title:'ဒေါ်', name:'စန်းစန်းဝင်း', phnumber:'09 259068734' , address: '-' };
+arrData[50] = { title:'ဒေါ်', name:'ဇင်မာလွင်', phnumber:'-' , address: '-' };
+arrData[51] = { title:'ဒေါက်တာ ဒေါ်', name:'သီတာဦး', phnumber:'09 2009714' , address: '-' };
+arrData[52] = { title:'ဒေါက်တာ ဒေါ်', name:'တင်တင်သိန်း', phnumber:'062 22155, 062 22156' , address: '-' };
+
+arrData.sort(sortFunction);
+        
+        for(i=0;i<arrData.length;i++)
+        {
+        	var table = document.getElementById("idTblTeacherInfo");
+        	var row = table.insertRow(i+2);
+        	if((i+1)%2==1) //odd
+        	{
+        		row.className = "odd";
+        	}
+        	else { //even
+        		row.className = "even";
+        	}
+        	
+        	var cell1 = row.insertCell(0);
+        	var cell2 = row.insertCell(1);
+        	var cell3 = row.insertCell(2);
+        	var cell4 = row.insertCell(3);
+        	var cell5 = row.insertCell(4);
+        	
+        	cell1.innerHTML = i+1;
+        	cell2.innerHTML = arrData[i]['title'];
+        	cell3.innerHTML = arrData[i]['name'];
+        	cell4.innerHTML = arrData[i]['phnumber'];
+        	cell5.innerHTML = arrData[i]['address'];
+        }
+        
+    }
+</script>
+</head>
+<body onload="funcOnLoad()" style="width:100%;text-align:center;">
+	<div class="menulist">
+	<ul align='center'>
+  	<li><span>Computer University ( Pakokku )</span></li>
+  	<li><a href="index.html?time=201512061636">Donation List</a></li>
+  	<li><a class="active" href="#teacherInfo">Teacher Information</a></li>
+  	<!--
+  	<li><a href="#contact">Contact</a></li>
+  	<li><a href="#about">About</a></li>
+  	-->
+	</ul>
+	</div>
+	
+	<table class="tblTeacherInfo" align="center" id="idTblTeacherInfo">
+		<tr class="header"><th colspan="5">Teachers' Information</th></tr>
+		<tr class="firstrow"><th>S/N</th><th>Title</th><th>Name</th><th>Phone Number</th><th>Address</th></tr>
+		
+		<tr class="lastrow"><th colspan="5">END</th></tr>
+	</table>
+</body>
+</html>

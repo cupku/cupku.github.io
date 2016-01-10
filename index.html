@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href='http://mmwebfonts.comquas.com/fonts/?font=myanmar3' />
+<style>
+
+@font-face
+{
+    font-family: 'Myanmar3';
+    font-weight: normal;
+    font-style: normal;
+    src: url('font/mm3.ttf');
+}
+
+.divRemark {
+	width:80%;
+	margin-left:10%;
+	border-radius:5px;
+	border:1px solid #FFC107;
+
+	background:#FFC107;
+	text-align:left;
+    font-family:Myanmar3; 
+    font-size: 20px;
+    margin-bottom:10px;
+}
+
+.tblDonation {
+    border:1px solid lightblue;
+    width:80%;
+    border-collapse: collapse;
+}
+
+.firstrow th{
+    padding:7px;
+    border:1px solid lightblue;
+    border-top:5px solid #22A7F0 !important;
+}
+
+.tblDonation td{
+    border:1px solid lightblue;
+    padding:7px;
+}
+
+.header {
+	height:45px;
+	line-height:25px;
+	border:1px solid #22A7F0;
+	color:darkblue;
+	background:#22A7F0;
+	font-family:Myanmar3; 
+    font-size: 20px;
+	border-top-left-radius:5px;
+}
+
+.tblDonation td:nth-child(1){
+    width:80px;
+    text-align:center;
+}
+
+.tblDonation td:nth-child(2){
+    text-align:left;
+    font-family:Myanmar3; 
+    font-size: 20px;
+}
+
+.tblDonation td:nth-child(3){
+    width:100px;
+    text-align:right;
+}
+
+.tblDonation td:nth-child(4){
+    width:150px;
+    text-align:center;
+}
+
+.lastrow th{
+    padding:7px;
+    border-bottom:5px solid #22A7F0 !important;
+}
+
+.even {
+	background-color:#EEFFFF;
+}
+
+.donationReceivePPL {
+	width:80%;
+	color:#222;
+	margin-left:10%;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+
+	background:#E91E63;
+	text-align:left;
+    font-family:Myanmar3; 
+    font-size: 20px;
+}
+
+/* Menu */
+.menulist {
+	margin-left:10%;
+	width:80%;
+	margin-bottom:10px;
+}
+
+.menulist li span{
+	    display: block;
+    color: white;
+    font-size:16px;
+    font-weight: 900;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menulist ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.menulist li {
+    float: left;
+}
+
+.menulist li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menulist li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.menulist .active {
+    background-color: #4CAF50;
+}
+
+</style>
+<script>
+	//a.sort(sortFunction);
+
+	function sortFunction(a, b) {
+    	if (a['name'] === b['name']) {
+        	return 0;
+    	}
+    	else {
+        	return (a['name'] < b['name']) ? -1 : 1;
+    	}
+	}
+
+    function funcOnLoad() {
+        
+        var arrData=[];
+    
+arrData[0] = { name:'ဉာဏ်လင်းစိုး', amount:100000, date:'2015-11-10' };
+arrData[1] = { name:'နေလင်းအောင်', amount:100000, date:'2015-11-10' };
+arrData[2] = { name:'အောင်ကိုမြတ်', amount:50000, date:'2015-11-10' };
+arrData[3] = { name:'ဝေလကြည်ဝင်း', amount:50000, date:'2015-11-10' };
+arrData[4] = { name:'စိုးစိုးရီ', amount:50000, date:'2015-11-10' };
+arrData[5] = { name:'ရီရီပို', amount:100000, date:'2015-11-10' };
+arrData[6] = { name:'စီစီမိုး', amount:30000, date:'2015-11-10' };
+arrData[7] = { name:'ချိုဇင်အောင်', amount:30000, date:'2015-11-10' };
+arrData[8] = { name:'ဖြိုးဝေလွင်', amount:20000, date:'2015-11-10' };
+arrData[9] = { name:'မွန်သဲဆွေ', amount:20000, date:'2015-11-10' };
+arrData[10] = { name:'ချစ်ကြင်ထူး', amount:50000, date:'2015-11-10' };
+arrData[11] = { name:'ယဉ်မွန်ငြိမ်းအေး', amount:50000, date:'2015-11-10' };
+arrData[12] = { name:'မျိုးမော်', amount:25000, date:'2015-11-10' };
+arrData[13] = { name:'အေးမွန်ထွန်း', amount:25000, date:'2015-11-10' };
+arrData[14] = { name:'ယဉ်ထားစိုး', amount:10000, date:'2015-11-10' };
+arrData[15] = { name:'ခင်မောင်လွင်', amount:50000, date:'2015-11-10' };
+
+arrData[16] = { name:'သိန်းထိုက်အောင်', amount:20000, date:'2015-11-10' };
+arrData[17] = { name:'ဉာဏ်လင်းထက်', amount:20000, date:'2015-11-10' };
+arrData[18] = { name:'မြတ်မွန်သိန်း', amount:100000, date:'2015-11-10' };
+arrData[19] = { name:'ကျော့ကျော့စံ', amount:20000, date:'2015-11-10' };
+arrData[20] = { name:'ထိုက်ဝေကျော်', amount:20000, date:'2015-11-10' };
+arrData[21] = { name:'ဇော်ထက်အောင်', amount:20000, date:'2015-11-10' };
+arrData[22] = { name:'ဝေဖူးသော်', amount:30000, date:'2015-11-10' };
+arrData[23] = { name:'ဟန်နီနွေး', amount:30000, date:'2015-11-10' };
+arrData[24] = { name:'ရွှေမင်းစိုး', amount:30000, date:'2015-11-10' };
+arrData[25] = { name:'တူးတူးနိုင်', amount:30000, date:'2015-11-10' };
+arrData[26] = { name:'အောင်စည်ဟိန်း', amount:30000, date:'2015-11-10' };
+
+arrData[27] = { name:'ဇော်​ဝင်​း​မောင်', amount:30000, date:'2015-12-05' };
+arrData[28] = { name:'သန်​့ဇင်', amount:30000, date:'2015-12-05' };
+arrData[29] = { name:'လင်းနိုင်ဦး', amount:30000, date:'2015-12-05' };
+arrData[30] = { name:'အောင်ဇေယျာဝင်း', amount:50000, date:'2015-12-05' };
+arrData[31] = { name:'အောင်သော်နိုင်', amount:100000, date:'2015-12-05' };
+arrData[32] = { name:'ရဲလင်းသူရှိန်', amount:25000, date:'2015-12-05' };
+
+arrData[33] = { name:'ဝေလင်း + မလှသက်မာ', amount: 30000, date:'2015-12-03' };
+arrData[34] = { name:'မျိုးသူကျော်', amount: 30000, date:'2015-12-03' };
+arrData[35] = { name:'မြတ်မင်း', amount: 20000, date:'2015-12-03' };
+arrData[36] = { name:'ညီညီနောင်', amount: 5000, date:'2015-12-03' };
+arrData[37] = { name:'မီမီကို', amount: 500000, date:'2015-12-03' };
+arrData[38] = { name:'မီမီခိုင်', amount: 50000, date:'2015-12-03' };
+arrData[39] = { name:'စန်းမြဝေ', amount: 50000, date:'2015-12-03' };
+arrData[40] = { name:'နုနုလင်း', amount: 20000, date:'2015-12-03' };
+arrData[41] = { name:'လဲ့လဲ့ဖြူ', amount: 20000, date:'2015-12-03' };
+arrData[42] = { name:'စုလှဖြူ', amount: 20000, date:'2015-12-03' };
+arrData[43] = { name:'တင်ခိုင်ဝင်း', amount: 20000, date:'2015-12-03' };
+arrData[44] = { name:'ဆွေဆွေမာ', amount: 20000, date:'2015-12-03' };
+arrData[45] = { name:'သင်းလဲ့အောင်', amount: 10000, date:'2015-12-03' };
+arrData[46] = { name:'တင်နီလာဝင်း', amount: 10000, date:'2015-12-03' };
+arrData[47] = { name:'ဝင်းဝင်းသန်း', amount: 5000, date:'2015-12-03' };
+arrData[48] = { name:'စန်းမြင့်ဌေး', amount: 5000, date:'2015-12-03' };
+
+arrData[49] = { name:'သန်းထိုက်', amount: 50000, date:'2015-12-01' };
+arrData[50] = { name:'ရွှေစင်', amount: 50000, date:'2015-12-01' };
+arrData[51] = { name:'လဲ့လဲ့ရီ', amount: 50000, date:'2015-12-01' };
+arrData[52] = { name:'ဝေဇင်အောင်', amount: 20000, date:'2015-12-01' };
+arrData[53] = { name:'နုနုလှိုင်', amount: 20000, date:'2015-12-01' };
+arrData[54] = { name:'မိုးမိုးစံ', amount: 20000, date:'2015-12-01' };
+arrData[55] = { name:'ခင်မျိုးဝေ', amount: 30000, date:'2015-12-01' };
+arrData[56] = { name:'သိန်းယု', amount: 30000, date:'2015-12-01' };
+arrData[57] = { name:'ခင်ဇာမွန်', amount: 20000, date:'2015-12-01' };
+arrData[58] = { name:'ခင်စန္ဒာမိုး', amount: 20000, date:'2015-12-01' };
+arrData[59] = { name:'ခင်မို့မို့သန်း', amount: 20000, date:'2015-12-01' };
+arrData[60] = { name:'စုမွန်ဟန်', amount: 20000, date:'2015-12-01' };
+arrData[61] = { name:'အိချယ်မွန်', amount: 20000, date:'2015-12-01' };
+arrData[62] = { name:'နုနုလွင်', amount: 20000, date:'2015-12-01' };
+arrData[63] = { name:'တင်မျိုးနှင်း', amount: 20000, date:'2015-12-01' };
+arrData[64] = { name:'အေးထိုက်စံ', amount: 20000, date:'2015-12-01' };
+arrData[65] = { name:'မေစုလှိုင်', amount: 20000, date:'2015-12-01' };
+arrData[66] = { name:'သိမ့်သိမ့်ထွေး', amount: 20000, date:'2015-12-01' };
+arrData[67] = { name:'သဲစုမိုး', amount: 20000, date:'2015-12-01' };
+arrData[68] = { name:'သီတာနွယ်', amount: 20000, date:'2015-12-01' };
+arrData[69] = { name:'နီလာချင်း', amount: 20000, date:'2015-12-01' };
+arrData[70] = { name:'ကြည်ကြည်သိန်း', amount: 20000, date:'2015-12-01' };
+arrData[71] = { name:'ခင်မာ', amount: 10000, date:'2015-12-01' };
+arrData[72] = { name:'သဇင်ထွန်း', amount: 50000, date:'2015-12-01' };
+arrData[73] = { name:'ယဉ်ယဉ်အေး', amount: 30000, date:'2015-12-01' };
+arrData[74] = { name:'ဖြူနှင်းခင်', amount: 20000, date:'2015-12-01' };
+arrData[75] = { name:'နွယ်နွယ်စိုး', amount: 20000, date:'2015-12-01' };
+arrData[76] = { name:'အေးအေးမြိုင်', amount: 10000, date:'2015-12-01' };
+arrData[77] = { name:'ဝင်းဝင်းမိုး', amount: 10000, date:'2015-12-01' };
+arrData[78] = { name:'မေဇင်ခိုင်', amount: 10000, date:'2015-12-01' };
+arrData[79] = { name:'အေးအေးမူ', amount: 10000, date:'2015-12-01' };
+arrData[80] = { name:'မြမြမူ', amount: 10000, date:'2015-12-01' };
+arrData[81] = { name:'စုမြတ်အောင်', amount: 10000, date:'2015-12-01' };
+arrData[82] = { name:'မြသီတာကျော်', amount: 10000, date:'2015-12-01' };
+
+arrData[83] = { name:'သူရထွန်း', amount: 100000, date:'2015-12-08' };
+arrData[84] = { name:'စိန်မင်းလင်း', amount: 20000, date:'2015-12-08' };
+arrData[85] = { name:'အိအိဖြူ', amount: 10000, date:'2015-12-08' };
+arrData[86] = { name:'နန်းအိအိခိုင်၊ နန်းအိအိဝေ', amount: 10000, date:'2015-12-08' };
+arrData[87] = { name:'နှင်းကေသီမောင်', amount: 5000, date:'2015-12-08' };
+//arrData[88] = { name:'ဝေဖူးသော်', amount: 10000, date:'2015-12-08' };
+
+        arrData.sort(sortFunction);
+        
+        for(i=0;i<arrData.length;i++)
+        {
+        	var table = document.getElementById("idTblDonation");
+        	var row = table.insertRow(i+2);
+        	if((i+1)%2==1) //odd
+        	{
+        		row.className = "odd";
+        	}
+        	else { //even
+        		row.className = "even";
+        	}
+        	
+        	var cell1 = row.insertCell(0);
+        	var cell2 = row.insertCell(1);
+        	var cell3 = row.insertCell(2);
+        	var cell4 = row.insertCell(3);
+        	cell1.innerHTML = i+1;
+        	cell2.innerHTML = arrData[i]['name'];
+        	cell3.innerHTML = arrData[i]['amount'].formatMoney(0,'.',',');
+        	cell4.innerHTML = arrData[i]['date'];
+        }
+    }
+    
+    Number.prototype.formatMoney = function(c, d, t){
+var n = this, 
+    c = isNaN(c = Math.abs(c)) ? 2 : c, 
+    d = d == undefined ? "." : d, 
+    t = t == undefined ? "," : t, 
+    s = n < 0 ? "-" : "", 
+    i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", 
+    j = (j = i.length) > 3 ? j % 3 : 0;
+   return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+ };
+</script>
+</head>
+<body onload="funcOnLoad()" style="width:100%;text-align:center;">
+<!--
+	<div style="margin-left:10%;width:80%;height:400px;background-image: url('building.jpg');">
+	</div> -->
+	<div class="menulist">
+	<ul align='center'>
+  	<li><span>Computer University ( Pakokku )</span></li>
+  	<li><a class="active" href="#news">Donation List</a></li>
+  	<li><a href="teacher_information.html?time=201512061636">Teacher Information</a></li>
+  	<!--
+  	<li><a href="#contact">Contact</a></li>
+  	<li><a href="#about">About</a></li>
+  	-->
+	</ul>
+	</div>
+	<div class="divRemark">
+		<ul>
+			<li>8.Dec.2015 အစည်းအဝေး ဆုံးဖြတ်ချက် အရ တဦးချင်း အလှူငွေ စာရင်းများကို အာစရိယ ပူဇော်ပွဲ ကျင်းပမည့်ရက် မတိုင်မှီ ထုတ်ပြန် ပေးပါမည်(အာစရိယပူဇော်ပွဲ ကော်မတီ)</li>
+			<li>အမည်များကို ရှာရ အဆင်ပြေစေရန် အက္ခရာ အလိုက် စဉ်ပေးထားပါသည်။ အမည် အက္ခရာလိုက် စဉ်ရန်အတွက် အမည်ရှေ့က 'မောင်' ၊ 'မ' များကို ချန်လှပ်ထားခဲ့ရခြင်း ဖြစ်ပါသည်။</li>
+		</ul>
+	</div>
+	<table class="tblDonation" align="center" id="idTblDonation">
+		<tr class="header"><th colspan="4">&nbsp;အလှူငွေ လက်ခံရရှိ စာရင်း&nbsp;</th></tr>
+		<tr class="firstrow"><th>S/N</th><th>Name</th><th>Amount</th><th>Date</th></tr>
+		
+		<tr class="lastrow"><th colspan="4">END</th></tr>
+	</table>
+	<div class="donationReceivePPL">
+		<div style="padding:10px;padding-left:30px !important;">
+		ဆက်သွယ်လှူဒါန်းနိုင်သော သူများ - <br/>
+		ရန်ကုန်
+		<ul>
+			<li>ကိုချစ်ကြည်မောင် - 09 253061875</li>
+			<li>ကိုအောင်စည်ဟိန်း - 09 799668803</li>
+		</ul>
+		နေပြည်တော်
+		<ul>
+			<li>မတင်တင်စိုး(ခ)နေခြည်ဦး - 09 31255703</li>
+		</ul>
+		မန္တလေး
+		<ul>
+			<li>မဝေဖူးသော် - 09 797776761</li>
+		</ul>
+		ပခုက္ကူ
+		<ul>
+			<li>ကိုအောင်ကျော်စိုး - 09 970185944</li>
+		<li>မမေသူထွန်း - 09 421119364 ( ဧရာဝတီဘဏ်)</li>
+		<li>မစန်းမြဝေ - 09 401510700 / 09 971109887 ( မြဝတီ ဘဏ် )</li>
+		<li>ကိုဇော်နိုင်လင်း - 09 971401646 ( မြဝတီ ဘဏ် )</li>
+		<li>ကိုတေဇာကျော် - 09 971124525 / 09 796472063 ( ပထမပုဂ္ဂလိက ဘဏ် )</li>
+		<li>ကိုအောင်မိုးထွေး - 09 40047870 (ကမ္ဘောဇ ဘဏ် )</li>
+		<li>မမီမီခိုင် - 09 795938720 ( မြန်မာ့ရှေ့ဆောင် ဘဏ် )</li>
+		<li>မောင်မြိုင် - 09 401627444 / 09 971441222 ( M Mobile )</li>
+		<li>မလဲ့လဲ့ရည် - 09 2301794 / 09 794406231</li>
+		<li>မခိုင်ခင်မွှေး - 09 401508746 / 09 971380556</li>
+		<li>မအိကေခိုင် - 09 401500907 / 09 33839136</li>
+		<li>မသဇင်ထွန်း - 09 402660992 / 09 971517112</li>
+		<li>မယဉ်မင်းထွေး - 09 401508170 / 09 974311851</li>
+		<li>မဝေဇင်အောင် - 09 405512752</li>
+		<li>မခင်ဇာမွန် - 09 256057162</li>
+		<li>မစုမွန်ဟန် - 09 780414924</li>
+		<li>ကိုဝင်းမင်းဇော် - 09 794645825</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
